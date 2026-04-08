@@ -4,8 +4,6 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Skeleton from '../UI/Skeleton'
-import AuthorImage from '../../images/author_thumbnail.jpg'
-import nftImage from '../../images/nftImage.jpg'
 
 const HotCollections = () => {
   const sliderRef = React.useRef(null)

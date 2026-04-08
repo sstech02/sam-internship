@@ -13219,6 +13219,7 @@ a.read_more i {
 
 .nft_coll {
   text-align: center;
+  padding: 20px;
 }
 
 .nft_coll_info {
@@ -13243,7 +13244,7 @@ a.read_more i {
 }
 
 .nft_coll_pp {
-  width: 30px;
+  width: 50px;
   display: block;
   margin: 0 auto;
   margin-top: -15px;
@@ -13252,7 +13253,7 @@ a.read_more i {
 }
 
 .nft_coll_pp img {
-  width: 30px;
+  width: 50px;
   height: auto;
   border-radius: 100%;
   -moz-border-radius: 100%;
@@ -13272,6 +13273,37 @@ a.read_more i {
   position: absolute;
   bottom: 4px;
   right: 5px;
+}
+
+/* NewItems specific positioning */
+.new-items-section .nft_coll {
+  position: relative;
+  padding: 0;
+  padding-bottom: 10px;
+}
+
+.new-items-section .nft_coll_pp {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin: 0;
+  z-index: 10;
+  display: block;
+}
+
+.nft_coll_nI_wrap {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.Timer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  color: white;
+  text-decoration: bold;
 }
 
 .author_list {
