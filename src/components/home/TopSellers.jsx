@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Skeleton from "../UI/Skeleton";
-import AuthorImage from "../../images/author_thumbnail.jpg";
+import axios from 'axios'
 
 const TopSellers = () => {
   const [items, setItems] = useState([]);
   const [dataIsLoaded, setDataIsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch("https://us-central1-nft-cloud-functions.cloudfunctions.net/topSellers")
-      .then(res => res.json())
-      .then(json => {
-        setItems(json);
-        setDataIsLoaded(true);
-      });
-  }, []);
+    axios
+      .get(
+        'https://us-central1-nft-cloud-functions.cloudfunctions.net/topSellers'
+      )
+      .then(res => {
+        setItems(res.data)
+        setDataIsLoaded(true)
+      })
+      .catch(error => {
+        console.error('Error fetching new items:', error)
+      })
+  }, [])
 
   if (!dataIsLoaded) {
     return (
