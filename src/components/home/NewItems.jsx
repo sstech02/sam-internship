@@ -105,18 +105,17 @@ const NewItems = () => {
             {items.map(item => (
               <div key={item.id}>
                 <div className='nft_coll'>
-                  <div className='nft_coll_nI_wrap'>
-                    <div className='nft_coll_pp'>
-                      <Link to='/author'>
-                        <img
-                          className='lazy pp-coll'
-                          src={item.authorImage}
-                          alt=''
-                        />
-                      </Link>
-                      <i className='fa fa-check'></i>
-                    </div>
+                  <div className='nft_coll_pp'>
+                    <Link to='/author'>
+                      <img
+                        className='lazy pp-coll'
+                        src={item.authorImage}
+                        alt=''
+                      />
+                    </Link>
+                    <i className='fa fa-check'></i>
                   </div>
+
                   <div className='nft_wrap'>
                     <div className='Timer'>
                       <Timer expiryDate={item.expiryDate} />
