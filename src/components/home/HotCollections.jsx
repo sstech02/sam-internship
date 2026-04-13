@@ -4,6 +4,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Skeleton from '../UI/Skeleton'
+import axios from 'axios'
 
 const HotCollections = () => {
   const sliderRef = React.useRef(null)
@@ -11,13 +12,16 @@ const HotCollections = () => {
   const [dataIsLoaded, setDataIsLoaded] = useState(false)
 
   useEffect(() => {
-    fetch(
-      'https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections'
-    )
-      .then(res => res.json())
-      .then(json => {
-        setItems(json)
+    axios
+      .get(
+        'https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections'
+      )
+      .then(res => {
+        setItems(res.data)
         setDataIsLoaded(true)
+      })
+      .catch(error => {
+        console.error('Error fetching new items:', error)
       })
   }, [])
 
