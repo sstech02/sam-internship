@@ -19,7 +19,6 @@ const ItemDetails = () => {
         setDataIsLoaded(true)
       })
   }, [nftId])
-  console.log(item)
 
   if (!dataIsLoaded) {
     return (
