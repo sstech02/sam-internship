@@ -24,7 +24,7 @@ const HotCollections = () => {
         console.error('Error fetching new items:', error)
       })
   }, [])
-  //Merge practice
+
   var settings = {
     dots: true,
     infinite: true,
@@ -120,7 +120,7 @@ const HotCollections = () => {
                     </Link>
                   </div>
                   <div className='nft_coll_pp'>
-                    <Link to='/author'>
+                    <Link to={`/author/${item.authorId}`}>
                       <img
                         className='lazy pp-coll'
                         src={item.authorImage}
