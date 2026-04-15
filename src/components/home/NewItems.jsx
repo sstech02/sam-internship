@@ -96,9 +96,7 @@ const NewItems = () => {
           <div className='col-lg-12'>
             <div className='text-center'>
               <h2
-                className='wow fadeInUp'
-                data-aos='fade-Up'
-                style={{ visibility: 'visible', animationDelay: '1s' }}
+                data-aos="fade-up" data-aos-duration="1000"
               >
                 New Items
               </h2>
@@ -108,8 +106,8 @@ const NewItems = () => {
         </div>
         <div className='slider-container'>
           <Slider {...settings} ref={sliderRef}>
-            {items.map(item => (
-              <div key={item.id}>
+            {items.map((item, index) => (
+              <div key={item.id} data-aos='fade-up' data-aos-delay={`${index * 50}`}>
                 <div className='nft_coll'>
                   <div className='nft_coll_pp'>
                     <Link to='/author'>

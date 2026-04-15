@@ -23,7 +23,9 @@ const Landing = () => {
                 data-wow-delay='.5s'
                 style={{ visibility: 'visible', animationDelay: '0.5s' }}
               >
-                <span className='text-uppercase id-color-2'>Ultraverse Market</span>
+                <span className='text-uppercase id-color-2'>
+                  Ultraverse Market
+                </span>
               </h6>
               <div className='spacer-10'></div>
               <h1
@@ -45,15 +47,11 @@ const Landing = () => {
                 interchangeable
               </p>
               <div className='spacer-10'></div>
-              <Link
-                className='btn-main wow fadeInUp lead'
-                data-wow-delay='1.25s'
-                to='/explore'
-                style={{ visibility: 'visible', animationDelay: '1.25s' }}
-                data-aos='fade-Up'
-              >
-                Explore
-              </Link>
+              <div data-aos='fade-up' data-aos-delay='1250' data-aos-duration="1000">
+                <Link className='btn-main lead' to='/explore'>
+                  Explore
+                </Link>
+              </div>
               <div className='mb-sm-30'></div>
             </div>
             <div className='col-md-6 xs-hide'>
