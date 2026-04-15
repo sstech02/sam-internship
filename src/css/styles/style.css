@@ -14333,7 +14333,6 @@ a.read_more i {
 .profile_avatar img,
 .profile_name {
   display: flex;
-  align-items: center;
 }
 
 .d_coll .profile_avatar img,
@@ -14370,6 +14369,8 @@ a.read_more i {
 
 .profile_name {
   margin-left: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .rtl .profile_name {
