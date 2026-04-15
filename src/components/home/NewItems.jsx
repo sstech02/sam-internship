@@ -95,11 +95,7 @@ const NewItems = () => {
         <div className='row'>
           <div className='col-lg-12'>
             <div className='text-center'>
-              <h2
-                className='wow fadeInUp'
-                data-aos='fade-Up'
-                style={{ visibility: 'visible', animationDelay: '1s' }}
-              >
+              <h2 data-aos='fade-up' data-aos-duration='1000'>
                 New Items
               </h2>
               <div className='small-border bg-color-2'></div>
@@ -108,11 +104,15 @@ const NewItems = () => {
         </div>
         <div className='slider-container'>
           <Slider {...settings} ref={sliderRef}>
-            {items.map(item => (
-              <div key={item.id}>
+            {items.map((item, index) => (
+              <div
+                key={item.id}
+                data-aos='fade-up'
+                data-aos-delay={`${index * 50}`}
+              >
                 <div className='nft_coll'>
                   <div className='nft_coll_pp'>
-                    <Link to='/author'>
+                    <Link to={`/author/${item.authorId}`}>
                       <img
                         className='lazy pp-coll'
                         src={item.authorImage}

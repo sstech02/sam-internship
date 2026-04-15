@@ -68,11 +68,7 @@ const TopSellers = () => {
         <div className='row'>
           <div className='col-lg-12'>
             <div className='text-center'>
-              <h2
-                className='wow fadeInUp'
-                data-aos='fade-Up'
-                style={{ visibility: 'visible', animationDelay: '1s' }}
-              >
+              <h2 data-aos='fade-up' data-aos-duration='1000'>
                 Top Sellers
               </h2>
               <div className='small-border bg-color-2'></div>
@@ -80,8 +76,12 @@ const TopSellers = () => {
           </div>
           <div className='col-md-12'>
             <ol className='author_list'>
-              {items.map(item => (
-                <li key={item.id}>
+              {items.map((item, index) => (
+                <li
+                  key={item.id}
+                  data-aos='fade-up'
+                  data-aos-delay={`${index * 50}`}
+                >
                   <div className='author_list_pp'>
                     <Link to={`/author/${item.authorId}`}>
                       <img
