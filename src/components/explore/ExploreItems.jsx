@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Timer from '../UI/Timer'
@@ -10,7 +10,7 @@ const ExploreItems = () => {
   const [visibleCount, setVisibleCount] = useState(8)
   const [filterValue, setFilterValue] = useState('')
 
-  const getFilterUrl = () => {
+  const getFilterUrl = useCallback(() => {
     const baseUrl =
       'https://us-central1-nft-cloud-functions.cloudfunctions.net/explore?'
 
@@ -18,7 +18,7 @@ const ExploreItems = () => {
       return baseUrl + `filter=${filterValue}`
     }
     return baseUrl
-  }
+  }, [filterValue])
 
   useEffect(() => {
     const url = getFilterUrl()
@@ -31,7 +31,7 @@ const ExploreItems = () => {
       .catch(error => {
         console.error('error', error)
       })
-  }, [getFilterUrl], [filterValue])
+  }, [getFilterUrl])
 
   const loadMore = event => {
     event.preventDefault()
