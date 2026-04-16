@@ -31,7 +31,7 @@ const ExploreItems = () => {
       .catch(error => {
         console.error('error', error)
       })
-  }, [filterValue])
+  }, [getFilterUrl], [filterValue])
 
   const loadMore = event => {
     event.preventDefault()
