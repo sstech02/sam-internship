@@ -109,13 +109,14 @@ const HotCollections = () => {
                 data-aos='fade-up'
                 data-aos-delay={`${index * 50}`}
               >
-                <div className='nft_coll'>
+                <div className='nft_coll' style={{ margin: '0 5px' }}>
                   <div className='nft_wrap'>
                     <Link to={`/item-details/${item.nftId}`}>
                       <img
                         src={item.nftImage}
                         className='lazy img-fluid'
                         alt=''
+                        style={{ height: '100%' }}
                       />
                     </Link>
                   </div>
